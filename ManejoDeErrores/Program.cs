@@ -13,10 +13,24 @@ namespace ManejoDeErrores
             list[3] = "Wednesday";
             list[4] = "Thursday";
 
-            for (int i = 0; i <= 5; i++)
+            try
             {
-                Console.WriteLine(list[i].ToString());
+                for (int i = 0; i <= 5; i++)
+                {
+                    Console.WriteLine(list[i].ToString());
+                }
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine("\nerror: \n" + ex.Message + "\n" + "El indice 'i' del 'for' se encuentra " +
+                    "fuera de los limites de la lista 'list'");
+                Console.WriteLine("corremos el codigo nuevamente con una correccion \n");
+                for (int i = 0; i < list.Length ; i++)
+                {
+                    Console.WriteLine(list[i].ToString());
+                }
+            }
+            
             Console.ReadLine();
         }
     }

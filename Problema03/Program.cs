@@ -48,7 +48,16 @@ namespace Problema03
 
         static void MostrarAuto(Auto auto)
         {
-            Console.WriteLine("{0} - {1}", auto.Modelo, auto.Anio);
+            try
+            {
+                Console.WriteLine("{0} - {1}", auto.Modelo, auto.Anio);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("\nerror: \n" + ex.Message + "\nNo se cargaron los datos necesarios para generar el objeto 'auto'" +
+                    "en la instancia 'Auto Auto2 = CrearAutoPeugeot();'");
+            }
+            
             Console.ReadLine();
         }
     }
